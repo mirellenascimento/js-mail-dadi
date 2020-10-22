@@ -1,7 +1,5 @@
-// var userEmail = document.getElementById("email").value;
-// var emailMessage = document.getElementById("message");
 var emailButton = document.getElementById("verificaButton");
-var message = "Non sei ancora registrato... Ma puoi giocare lo stesso ;)"
+var verMessage = document.getElementById("emailMessage");
 var startButton = document.getElementById("iniziaPartita");
 var computerResult = document.getElementById("giocoComputer");
 var userResult = document.getElementById("giocoUser");
@@ -19,7 +17,10 @@ var computer = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER) + MIN_NUMBER
 var player = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER) + MIN_NUMBER);
 
 
+
 var emailList = ["email1", "email2", "email3", "email4", "email5", "email6", "email7", "email8", "email9", "email10"];
+var message = "Non sei ancora registrato... Ma puoi giocare lo stesso ;)"
+
 
 emailButton.addEventListener("click", function(){
   var userEmail = document.getElementById("email").value;
@@ -30,21 +31,24 @@ emailButton.addEventListener("click", function(){
 
     if (emailList[i] == userEmail){
       message = "Abbiamo trovato il tuo registro! Possiamo divertirci insieme ;)"
+      verMessage.style.color = "blue";
     } else {
     }
   }
-  document.getElementById("message").innerHTML = message;
+  verMessage.innerHTML = message;
 
-  startButton.style.display = "block";
+
+  document.getElementById("game").style.display = "block";
 });
 
 startButton.addEventListener("click", function(){
   computerResult.innerHTML = computer;
-  playButton.style.display = "block";
+  document.getElementById("gameStart").style.display = "block";
 });
 
 playButton.addEventListener("click", function(){
   userResult.innerHTML = player;
+  document.getElementById("gameEnd").style.display = "block";
 
   if (player > computer){
     finalResult.innerHTML = "Hai vinto!";
@@ -53,6 +57,4 @@ playButton.addEventListener("click", function(){
   } else {
     finalResult.innerHTML = "È stato un pareggio!";
   }
-
-  restartButton.style.display = "block";
 });

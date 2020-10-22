@@ -1,3 +1,38 @@
-#iniziaPartita, #gioca, #reinizia{
+body{
+  background-color: lightgreen;
+}
+
+#header{
+  height: 100px;
+  margin-top: 50px;
+}
+
+.email-wrapper, .game-wrapper{
+  width: 70%;
+  min-height: 250px;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 35px;
+  box-shadow: 5px, 5px, 2px;
+}
+.email-wrapper *{
+  margin: 5px 0;
+}
+
+#email{
+  min-width: 300px;
+}
+
+#emailMessage{
+  color: red;
+}
+
+#game #gameStart #gameEnd{
   display: none;
+}
+
+
+#iniziaPartita, #gioca, #reinizia{
 }
