@@ -1,30 +1,34 @@
+// Buttons
 var emailButton = document.getElementById("verificaButton");
-var verMessage = document.getElementById("emailMessage");
 var startButton = document.getElementById("iniziaPartita");
+var restartButton = document.getElementById("reinizia");
+
+// Messages
+var verMessage = document.getElementById("emailMessage");
 var computerResult = document.getElementById("giocoComputer");
 var userResult = document.getElementById("giocoUser");
-var playButton = document.getElementById("gioca");
 var finalResult = document.getElementById("resultado");
-var restartButton = document.getElementById("reinizia");
-var okButton = document.getElementById("ok");
 
+// Email verification
+var emailList = ["email1", "email2", "email3", "email4", "email5", "email6", "email7", "email8", "email9", "email10"];
+var message = "Non sei ancora registrato... Ma puoi giocare lo stesso ;)"
 
-
-
-
+// Dices
 MIN_NUMBER = 1;
 MAX_NUMBER = 6;
 var computer = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER) + MIN_NUMBER);
 var player = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER) + MIN_NUMBER);
 
 
+var emailEnter = document.getElementById("email");
+emailEnter.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   emailButton.click();
+  }
+});
 
-var emailList = ["email1", "email2", "email3", "email4", "email5", "email6", "email7", "email8", "email9", "email10"];
-var message = "Non sei ancora registrato... Ma puoi giocare lo stesso ;)"
-
-
-
-
+// Email verification button action
 emailButton.addEventListener("click", function(){
   var userEmail = document.getElementById("email").value;
   console.log(userEmail);
@@ -39,36 +43,19 @@ emailButton.addEventListener("click", function(){
     }
   }
   verMessage.innerHTML = message;
-
-
   document.getElementById("game").style.display = "block";
   startButton.style.display = "block";
-
-
 });
 
-
-
-
-
-
+// Game action
 startButton.addEventListener("click", function(){
-  document.getElementById("computerPlays").style.display = "block";
-  computerResult.innerHTML ="Il computer ha tirato: " + computer;
-  okButton.style.display = "block";
-});
+  document.getElementById("gameStart").style.display = "flex";
+  computerResult.className = "dado0" + computer;
+  userResult.className = "dado0" + player;
 
-okButton.addEventListener("click", function(){
-  // document.getElementById("userPlays").style.display = "block";
-  document.getElementById("adessoMessage").style.display = "block";
-  playButton.style.display = "block";
-});
-
-
-
-playButton.addEventListener("click", function(){
-  userResult.innerHTML ="Tu hai tirato: " + player;
+// Game result
   document.getElementById("gameEnd").style.display = "block";
+  document.getElementById("gameEnd").className = "show";
 
   if (player > computer){
     finalResult.innerHTML = "Hai vinto!";
@@ -84,6 +71,7 @@ playButton.addEventListener("click", function(){
   restartButton.style.display = "block";
 });
 
+// Restart game action
 restartButton.addEventListener("click", function(){
   window.location.reload(false);
 })

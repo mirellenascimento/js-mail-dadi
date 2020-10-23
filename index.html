@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <!-- Header -->
     <section id="header">
       <h1 class="text-center">GIOCO DEI DADI</h1>
     </section>
+    <!-- Email verification -->
     <section>
       <div class="container email wrapper">
         <div class="row">
@@ -23,43 +25,48 @@
         </div>
       </div>
     </section>
+    <!-- Dice game -->
     <section>
       <div id="game" class="container game wrapper">
         <div class="row">
-          <div class="col d-flex flex-column justify-content-start align-items-center">
+          <!-- start game button -->
+          <div class="col-12 d-flex justify-content-center align-items-center">
             <button id="iniziaPartita" class="btn btn-primary" type="button" name="button">Iniziare Gioco</button>
           </div>
         </div>
-        <div class="row">
-          <div id="computerPlays" class="col d-flex flex-column justify-content-startr align-items-center">
-            <h2 id="giocoComputer"></h2>
-            <button id="ok" class="btn btn-primary" type="button" name="button">OK</button>
+        <!-- dices result -->
+        <div id="gameStart" class="row">
+          <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+            <h2>Il computer ha tirato:</h2>
+            <div id="giocoComputer" class="dado01">
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+            <h2>Tu hai tirato:</h2>
+            <div id="giocoUser" class="dado01">
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div id="userPlays" class="col d-flex flex-column justify-content-start align-items-center">
-            <h3 id="adessoMessage">Adesso tocca a te:</h3>
-            <button id="gioca" class="btn btn-primary" type="button" name="button">Gioca</button>
-            <h2 id="giocoUser"></h2>
-          </div>
-        </div>
-        <div id="gameEnd" class="row">
-          <div class="col d-flex flex-column justify-content-startr align-items-center">
+        <!-- game result -->
+        <div id="gameEnd" class="row hide">
+          <div class="col-12 d-flex flex-column justify-content-startr align-items-center">
             <h1 id="resultado"></h1>
             <button id="reinizia" class="btn btn-primary" type="button" name="button">Reiniziare Gioco</button>
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
     </section>
-
     <!-- Script-->
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
+
+
+<!-- <div id="gameStart" class="row">
+  <div class="col d-flex justify-content-center align-items-center">
+    <h2 id="giocoComputer"></h2>
+  </div>
+  <div class="col d-flex justify-content-center align-items-center">
+    <h2 id="giocoUser"></h2>
+  </div>
+</div> -->
