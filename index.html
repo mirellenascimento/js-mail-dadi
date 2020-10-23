@@ -11,11 +11,11 @@
     <section id="header">
       <h1 class="text-center">GIOCO DEI DADI</h1>
     </section>
-    <section id="identification">
-      <div class="container email-wrapper">
+    <section>
+      <div class="container email wrapper">
         <div class="row">
           <div class="col d-flex flex-column justify-content-center align-items-center">
-            <h3>Per partecipare, inserici tua email:</h3>
+            <h3>Per partecipare, inserici la tua email:</h3>
             <input id="email" type="text" name="userEmail" value="">
             <button id=verificaButton class="btn btn-primary" type="button" name="button">Verifica</button>
             <h3 id="emailMessage"></h3>
@@ -23,28 +23,30 @@
         </div>
       </div>
     </section>
-    <section id="game">
-      <div class="container game-wrapper">
+    <section>
+      <div id="game" class="container game wrapper">
         <div class="row">
-          <div class="col d-flex flex-column justify-content-center align-items-center">
+          <div class="col d-flex flex-column justify-content-start align-items-center">
             <button id="iniziaPartita" class="btn btn-primary" type="button" name="button">Iniziare Gioco</button>
           </div>
         </div>
-        <div id="gameStart" class="row">
-          <div class="col d-flex flex-column justify-content-center align-items-center">
-            <h3>Il computer ha tirato:</h3>
+        <div class="row">
+          <div id="computerPlays" class="col d-flex flex-column justify-content-startr align-items-center">
             <h2 id="giocoComputer"></h2>
+            <button id="ok" class="btn btn-primary" type="button" name="button">OK</button>
           </div>
-          <div class="col d-flex flex-column justify-content-center align-items-center">
-            <h3>Adesso toca a te:</h3>
-            <button id="gioca" type="button" name="button">Gioca</button>
+        </div>
+        <div class="row">
+          <div id="userPlays" class="col d-flex flex-column justify-content-start align-items-center">
+            <h3 id="adessoMessage">Adesso tocca a te:</h3>
+            <button id="gioca" class="btn btn-primary" type="button" name="button">Gioca</button>
             <h2 id="giocoUser"></h2>
           </div>
         </div>
         <div id="gameEnd" class="row">
-          <div class="col d-flex flex-column justify-content-center align-items-center">
+          <div class="col d-flex flex-column justify-content-startr align-items-center">
             <h1 id="resultado"></h1>
-            <button id="reinizia" type="button" name="button">Reinizia Gioco</button>
+            <button id="reinizia" class="btn btn-primary" type="button" name="button">Reiniziare Gioco</button>
           </div>
         </div>
       </div>

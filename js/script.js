@@ -6,6 +6,7 @@ var userResult = document.getElementById("giocoUser");
 var playButton = document.getElementById("gioca");
 var finalResult = document.getElementById("resultado");
 var restartButton = document.getElementById("reinizia");
+var okButton = document.getElementById("ok");
 
 
 
@@ -22,6 +23,8 @@ var emailList = ["email1", "email2", "email3", "email4", "email5", "email6", "em
 var message = "Non sei ancora registrato... Ma puoi giocare lo stesso ;)"
 
 
+
+
 emailButton.addEventListener("click", function(){
   var userEmail = document.getElementById("email").value;
   console.log(userEmail);
@@ -30,7 +33,7 @@ emailButton.addEventListener("click", function(){
     console.log(emailList[i]);
 
     if (emailList[i] == userEmail){
-      message = "Abbiamo trovato il tuo registro! Possiamo divertirci insieme ;)"
+      message = "Abbiamo trovato il tuo account! Possiamo divertirci insieme ;)"
       verMessage.style.color = "blue";
     } else {
     }
@@ -39,22 +42,48 @@ emailButton.addEventListener("click", function(){
 
 
   document.getElementById("game").style.display = "block";
+  startButton.style.display = "block";
+
+
 });
+
+
+
+
+
 
 startButton.addEventListener("click", function(){
-  computerResult.innerHTML = computer;
-  document.getElementById("gameStart").style.display = "block";
+  document.getElementById("computerPlays").style.display = "block";
+  computerResult.innerHTML ="Il computer ha tirato: " + computer;
+  okButton.style.display = "block";
 });
 
+okButton.addEventListener("click", function(){
+  // document.getElementById("userPlays").style.display = "block";
+  document.getElementById("adessoMessage").style.display = "block";
+  playButton.style.display = "block";
+});
+
+
+
 playButton.addEventListener("click", function(){
-  userResult.innerHTML = player;
+  userResult.innerHTML ="Tu hai tirato: " + player;
   document.getElementById("gameEnd").style.display = "block";
 
   if (player > computer){
     finalResult.innerHTML = "Hai vinto!";
+    finalResult.style.color = "blue";
   } else if (player < computer){
     finalResult.innerHTML = "Hai perso!";
+    finalResult.style.color = "red";
   } else {
     finalResult.innerHTML = "È stato un pareggio!";
+    finalResult.style.color = "grey";
   }
+
+  restartButton.style.display = "block";
 });
+
+restartButton.addEventListener("click", function(){
+  window.location.reload(false);
+})
