@@ -1,0 +1,87 @@
+body{
+  background-color: navy;
+}
+
+#header{
+  height: 50px;
+  margin-top: 20px;
+  color: white;
+}
+
+.wrapper{
+  width: 70%;
+  min-height: 240px;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px, 5px, 2px;
+}
+
+#email{
+  min-width: 400px;
+}
+
+#emailMessage{
+  color: red;
+}
+
+.email *{
+  margin: 5px 0;
+}
+
+#game, #gameStart{
+  display: none;
+  margin-top: 30px;
+}
+
+#resultado{
+  font-size: 48px;
+  padding-bottom: 30px;
+}
+.show {
+  transition: opacity 3s;
+  transition-delay:
+  2s;opacity:1;
+}
+
+.hide {
+  opacity:0;
+}
+
+/* Dices */
+[class*="dado0"]{
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  animation-name: spin;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.dado01{
+  background-image: url(../images/dice1.png);
+}
+.dado02{
+  background-image: url(../images/dice2.png);
+}
+.dado03{
+  background-image: url(../images/dice3.png);
+  background-size: cover;
+}
+.dado04{
+  background-image: url(../images/dice4.png);
+}
+.dado05{
+  background-image: url(../images/dice5.png);
+}
+.dado06{
+  background-image: url(../images/dado6.png);
+}
+
+
+  @keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(3600deg);}
+}
